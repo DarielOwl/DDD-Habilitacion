@@ -2,6 +2,7 @@ package usuario;
 
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
+import usuario.events.UsuarioCreado;
 import usuario.values.*;
 
 import java.util.List;
@@ -18,12 +19,13 @@ public class Usuario extends AggregateEvent<UsuarioId> {
 
 
     //Constructor del Agregado
-    public Usuario(UsuarioId entityId, Nombre nombre) {
+    public Usuario(UsuarioId entityId, Nombre nombre,DocumentoIdentidad documentoIdentidad,HuellaDactilar huellaDactilar) {
         super(entityId);
 
-        //Esto lanza un evento dominio llamado Persona Creada
-        //Pasa como parametro "nombre" y que es "aplicada" en este contexto
-        appendChange(new UsuarioCreada(nombre)).apply();
+        //Esto lanza un evento dominio llamado UsuarioCreado
+        //Pasa como parametro "nombre","documentoIdentidad" y "huellaDactilar"
+        //y que es "aplicada" en este contexto
+        appendChange(new UsuarioCreado(nombre,documentoIdentidad,huellaDactilar)).apply();
     }
 
     //Para cambiar el estado del los objetos
