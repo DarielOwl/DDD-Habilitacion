@@ -31,4 +31,11 @@ public class AppMovil implements ValueObject<Ejercicio> {
     public int hashCode() {
         return Objects.hash(value);
     }
+
+    @Override
+    public String toString() {
+        return "AppMovil{" +
+                "value=" + value +
+                '}';
+    }
 }

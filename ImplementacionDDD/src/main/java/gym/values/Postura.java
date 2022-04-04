@@ -38,4 +38,11 @@ public class Postura implements ValueObject<String> {
         return Objects.hash(value);
     }
 
+
+    @Override
+    public String toString() {
+        return "Postura{" +
+                "value='" + value + '\'' +
+                '}';
+    }
 }

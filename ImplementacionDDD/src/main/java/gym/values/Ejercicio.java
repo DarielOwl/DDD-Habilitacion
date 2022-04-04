@@ -37,4 +37,11 @@ public class Ejercicio implements ValueObject<String> {
     public int hashCode() {
         return Objects.hash(value);
     }
+
+    @Override
+    public String toString() {
+        return "Ejercicios{" +
+                "value='" + value + '\'' +
+                '}';
+    }
 }

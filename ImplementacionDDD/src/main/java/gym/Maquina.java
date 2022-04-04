@@ -18,4 +18,11 @@ public class Maquina extends Entity<MaquinaId> {
     public TipoMaquina getTipoMaquina() {
         return tipoMaquina;
     }
+
+    @Override
+    public String toString() {
+        return "Maquina{" +
+                "tipoMaquina=" + tipoMaquina +
+                '}';
+    }
 }
