@@ -15,7 +15,7 @@ public class GymChange extends EventChange {
             gym.entrenadorPlanta = event.getEntrenadorPlanta();
             gym.maquinas = event.getMaquinas();
         });
-        
+
     }
 
 
