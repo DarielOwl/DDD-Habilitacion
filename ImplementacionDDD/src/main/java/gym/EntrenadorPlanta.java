@@ -51,7 +51,7 @@ public class EntrenadorPlanta extends Entity<EntrenadorPlantaId> {
         return "Ejercicios de la AppMovil:\n" + this.appMovil.toString();
     }
 
-    //Getters
+    //Getters----------------------
     public Nombre nombre() {
         return nombre;
     }
@@ -75,5 +75,5 @@ public class EntrenadorPlanta extends Entity<EntrenadorPlantaId> {
     public Ejercicio ejercicio() {
         return ejercicio;
     }
-    
+
 }
