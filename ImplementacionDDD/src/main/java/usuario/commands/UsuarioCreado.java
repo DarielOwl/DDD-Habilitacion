@@ -1,26 +1,32 @@
-package usuario.events;
+package usuario.commands;
 
-import co.com.sofka.domain.generic.DomainEvent;
+import co.com.sofka.domain.generic.Command;
 import usuario.values.DocumentoIdentidad;
 import usuario.values.HuellaDactilar;
 import usuario.values.Nombre;
+import usuario.values.UsuarioId;
 
-public class UsuarioCreado extends DomainEvent {
+public class UsuarioCreado extends Command {
 
-    //Atributos----------------
+    private final UsuarioId usuarioId;
     private final Nombre nombre;
     private final DocumentoIdentidad documentoIdentidad;
     private final HuellaDactilar huellaDactilar;
 
-    //Creando un Evento--------------
-    public UsuarioCreado(Nombre nombre,DocumentoIdentidad documentoIdentidad,HuellaDactilar huellaDactilar) {
-        super("sofka.usuario.usuariocreado");
+
+    public UsuarioCreado(UsuarioId usuarioId, Nombre nombre, DocumentoIdentidad documentoIdentidad, HuellaDactilar huellaDactilar) {
+        this.usuarioId = usuarioId;
         this.nombre = nombre;
         this.documentoIdentidad = documentoIdentidad;
         this.huellaDactilar = huellaDactilar;
     }
 
-    //Getters-----------------
+
+    //Getters-------------------------
+    public UsuarioId getUsuarioId() {
+        return usuarioId;
+    }
+
     public Nombre getNombre() {
         return nombre;
     }
@@ -32,4 +38,5 @@ public class UsuarioCreado extends DomainEvent {
     public HuellaDactilar getHuellaDactilar() {
         return huellaDactilar;
     }
+
 }

@@ -17,6 +17,7 @@ public class EntrenadorPersonalizado extends Entity<EntrenadorPersonalizadoId> {
     private Rutina rutina;
     private Ejercicio ejercicio;
     private MensualidadUsuario mensualidadUsuario;
+    private ObligacionSocial obligacionSocial;
 
     //Constructor
     public EntrenadorPersonalizado(EntrenadorPersonalizadoId entityId, UsuarioId usuarioId, Nombre nombre, ContratoPrestacionServicio contratoPrestacionServicio, Rutina rutina, Ejercicio ejercicio, MensualidadUsuario mensualidadUsuario) {
@@ -46,12 +47,16 @@ public class EntrenadorPersonalizado extends Entity<EntrenadorPersonalizadoId> {
         this.usuarioId = Objects.requireNonNull(usuarioId);
     }
 
-    public String BrindarClasesGrupales(){
-        return "Dirigir clase grupal\n";
+    public void CobrarMensualidadUsuario(MensualidadUsuario mensualidadUsuario){
+        this.mensualidadUsuario = Objects.requireNonNull(mensualidadUsuario);
     }
 
-    public String PagarObligacionesSociales(){
-        return "NO IMPLEMENTADA\n";
+    public void PagarObligacionesSociales(ObligacionSocial obligacionSocial){
+        this.obligacionSocial = Objects.requireNonNull(obligacionSocial);
+    }
+
+    public String BrindarClasesGrupales(){
+        return "Dirigir clase grupal\n";
     }
 
     //Getters----------------------
