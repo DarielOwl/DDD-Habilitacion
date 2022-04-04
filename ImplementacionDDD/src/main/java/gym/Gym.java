@@ -54,4 +54,26 @@ public class Gym extends AggregateEvent<GymId> {
         appendChange(new OlbigacionesSocialesPagadas(entrenadorPersonalizadoId,obligacionSocial)).apply();
     }
 
+
+    //Getters---------------------------
+    public GymId gymId() {
+        return gymId;
+    }
+
+    public UsuarioId usuarioId() {
+        return usuarioId;
+    }
+
+    public EntrenadorPlanta entrenadorPlanta() {
+        return entrenadorPlanta;
+    }
+
+    public EntrenadorPersonalizado entrenadorPersonalizado() {
+        return entrenadorPersonalizado;
+    }
+
+    public Set<Maquina> maquinas() {
+        return maquinas;
+    }
+
 }

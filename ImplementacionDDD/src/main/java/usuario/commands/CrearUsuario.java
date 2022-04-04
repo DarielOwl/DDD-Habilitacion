@@ -6,7 +6,7 @@ import usuario.values.HuellaDactilar;
 import usuario.values.Nombre;
 import usuario.values.UsuarioId;
 
-public class UsuarioCreado extends Command {
+public class CrearUsuario extends Command {
 
     private final UsuarioId usuarioId;
     private final Nombre nombre;
@@ -14,7 +14,7 @@ public class UsuarioCreado extends Command {
     private final HuellaDactilar huellaDactilar;
 
 
-    public UsuarioCreado(UsuarioId usuarioId, Nombre nombre, DocumentoIdentidad documentoIdentidad, HuellaDactilar huellaDactilar) {
+    public CrearUsuario(UsuarioId usuarioId, Nombre nombre, DocumentoIdentidad documentoIdentidad, HuellaDactilar huellaDactilar) {
         this.usuarioId = usuarioId;
         this.nombre = nombre;
         this.documentoIdentidad = documentoIdentidad;
