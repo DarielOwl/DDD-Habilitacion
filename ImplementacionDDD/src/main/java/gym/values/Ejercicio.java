@@ -4,17 +4,17 @@ import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.Objects;
 
-public class TipoMaquina implements ValueObject<String> {
+public class Ejercicio implements ValueObject<String> {
 
     private final String value;
 
     //En los VO se deberia hacer las comparaciones
-    public TipoMaquina(String value) {
+    public Ejercicio(String value) {
         this.value = Objects.requireNonNull(value); //Que no sea nulo
 
         //Verificaciones--------------
         if(this.value.isBlank()) //Que no sea vacio
-            new IllegalArgumentException("El Tipo Maquina no puede estar vacio.");
+            new IllegalArgumentException("El Ejercicio no puede estar vacio.");
 
     }
 
@@ -24,12 +24,13 @@ public class TipoMaquina implements ValueObject<String> {
         return value;
     }
 
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        TipoMaquina that = (TipoMaquina) o;
-        return Objects.equals(value, that.value);
+        Ejercicio ejercicio = (Ejercicio) o;
+        return Objects.equals(value, ejercicio.value);
     }
 
     @Override

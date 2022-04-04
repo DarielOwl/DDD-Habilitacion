@@ -2,25 +2,22 @@ package gym.values;
 
 import co.com.sofka.domain.generic.ValueObject;
 
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.Objects;
 
-public class TipoMaquina implements ValueObject<String> {
+public class Horario implements ValueObject<Date> {
 
-    private final String value;
+    private final Date value;
 
     //En los VO se deberia hacer las comparaciones
-    public TipoMaquina(String value) {
+    public Horario(Date value) {
         this.value = Objects.requireNonNull(value); //Que no sea nulo
-
-        //Verificaciones--------------
-        if(this.value.isBlank()) //Que no sea vacio
-            new IllegalArgumentException("El Tipo Maquina no puede estar vacio.");
-
     }
 
     //Este vendria ser el get para obtener el objeto valor
     @Override
-    public String value() {
+    public Date value() {
         return value;
     }
 
@@ -28,8 +25,8 @@ public class TipoMaquina implements ValueObject<String> {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        TipoMaquina that = (TipoMaquina) o;
-        return Objects.equals(value, that.value);
+        Horario horario = (Horario) o;
+        return Objects.equals(value, horario.value);
     }
 
     @Override
